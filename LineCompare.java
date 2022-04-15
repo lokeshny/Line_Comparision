@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 
 import java.util.Scanner;
 
+
 public class LineCompare {
     static Logger logger = Logger.getLogger(LineCompare.class);
     public static void main(String [] args){
@@ -13,13 +14,10 @@ public class LineCompare {
 //        creating default constructor object
         LineCompare line = new LineCompare();
         logger.info("welcome to Line Comparison Computation on Master branch  ");
-        line.equals();
-
-
-
-
-
+//        line.equals();
+        line.compare_To();
     }
+
     double length_finder(){
         Scanner sc = new Scanner(System.in);
         logger.info("enter the x1");
@@ -36,10 +34,19 @@ public class LineCompare {
         logger.info("length of line = "+length);
         return length;
     }
+
     void equals(){
         String l1 = String.valueOf(length_finder());
         String l2 = String.valueOf(length_finder());
         logger.info("length of both the string are equals or not if equal(true) if not (false) "+l1.equals(l2));
+    }
+
+    void  compare_To(){
+        String l1 = String.valueOf(length_finder());
+        String l2 = String.valueOf(length_finder());
+        logger.info("length of both the string are equals or not if equal(0) if not (1) "+(l1.compareTo(l2 )));
+
+
     }
 
 }
